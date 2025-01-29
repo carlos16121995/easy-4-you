@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Itens", "Solution Itens", "{728CC66B-488C-4C41-9343-77F8E52EF4C8}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+		global.json = global.json
+		nuget.config = nuget.config
+		Package.props = Package.props
+		README.md = README.md
+		Version.props = Version.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E4U.Core", "src\E4U.Core\E4U.Core.csproj", "{77A3112C-2CF0-46DF-9550-60E2B72551AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77A3112C-2CF0-46DF-9550-60E2B72551AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77A3112C-2CF0-46DF-9550-60E2B72551AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77A3112C-2CF0-46DF-9550-60E2B72551AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77A3112C-2CF0-46DF-9550-60E2B72551AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

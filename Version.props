@@ -1,0 +1,31 @@
+<Project>
+  <PropertyGroup Label="Variables">
+    <DayOfYear>$([System.DateTime]::Now.DayOfYear)</DayOfYear>
+    <CurrentDate>$([System.DateTime]::Now.ToString("yyyyMMdd"))</CurrentDate>
+    <CurrentTime>$([System.DateTime]::Now.ToString("HHmm"))</CurrentTime>
+    <CurrentSerial>$(DayOfYear)$(CurrentTime)</CurrentSerial>
+    <SolutionDir Condition="'$(SolutionDir)'==''">$(MSBuildThisFileDirectory)</SolutionDir>
+    <VersionPrefix>1.0</VersionPrefix>
+    <BuildId>0</BuildId>
+    <VersionSuffix></VersionSuffix>
+    <PatchSuffix></PatchSuffix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <VersionSuffix Condition="'$(VersionSuffix)' == ''">dev</VersionSuffix>
+    <PatchSuffix Condition="'$(PatchSuffix)' == ''">$(CurrentTime)</PatchSuffix>
+    <BuildId Condition="'$(BuildId)' == '0'">$(DayOfYear)</BuildId>
+    <Version>$(VersionPrefix).$(BuildId)-$(VersionSuffix).$(PatchSuffix)</Version>
+    <AssemblyVersion>$(VersionPrefix).$(BuildId).$(PatchSuffix)</AssemblyVersion>
+    <FileVersion>$(AssemblyVersion)</FileVersion>
+    <InformationalVersion>$(AssemblyName) $(AssemblyVersion) - ($(Platform)_$(CurrentSerial))</InformationalVersion>
+    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <PatchSuffix Condition="'$(PatchSuffix)' == ''">$(CurrentTime)</PatchSuffix>
+    <Version>$(VersionPrefix).$(BuildId)</Version>
+    <AssemblyVersion>$(VersionPrefix).$(BuildId).$(PatchSuffix)</AssemblyVersion>
+    <FileVersion>$(AssemblyVersion)</FileVersion>
+    <InformationalVersion>$(AssemblyName) $(AssemblyVersion) - ($(Platform)_$(BuildId))</InformationalVersion>
+    <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
+  </PropertyGroup>
+</Project>

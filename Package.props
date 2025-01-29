@@ -1,0 +1,38 @@
+<Project>
+  <PropertyGroup>
+    <Company>Solis Loris Corp®</Company>
+    <Product>Easy For You Suite</Product>
+    <Copyright>Copyright (c) 2025, $(Company). All rights reserved.</Copyright>
+    <PackageProjectUrl>https://github.com/carlos16121995/easy-4-you</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/carlos16121995/easy-4-you</RepositoryUrl>
+    <NeutralLanguage>pt-BR</NeutralLanguage>
+    <PackageIcon>images/result.png</PackageIcon>
+    <PackageReadmeFile>docs/README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Authors>$(Company)</Authors>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(SolutionDir)assets/result.png" Pack="true" Visible="false" PackagePath="/images/" />
+    <None Include="$(SolutionDir)README.md" Pack="true" Visible="true" PackagePath="/docs/" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <IncludeSymbols>True</IncludeSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <IncludeSymbols>True</IncludeSymbols>
+  </PropertyGroup>
+
+  <Target Name="CleanOldAssets" AfterTargets="Clean">
+    <Message Text="Deleting old .nupkg's" Importance="high"/>
+    <Delete Files="$(SolutionDir)**/bin/Debug/*.nupkg" TreatErrorsAsWarnings="true" />
+    <Delete Files="$(SolutionDir)**/bin/Release/*.nupkg" TreatErrorsAsWarnings="true" />
+    <Message Text="Deleting CHANGELOG.md" Importance="high"/>
+    <Delete Files="$(SolutionDir)CHANGELOG.md" ContinueOnError="true" />
+  </Target>
+</Project>

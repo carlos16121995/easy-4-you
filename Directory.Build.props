@@ -1,0 +1,32 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)Version.props" />
+  <Import Project="$(MSBuildThisFileDirectory)Package.props" />
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- Configure code analysis. https://learn.microsoft.com/pt-br/dotnet/core/project-sdk/msbuild-props#analysislevel -->
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>Recomended</AnalysisMode>
+    <AnalysisModeMaintainability>Recomended</AnalysisModeMaintainability>
+    <AnalysisModePerformance>All</AnalysisModePerformance>
+    <AnalysisModeReliability>All</AnalysisModeReliability>
+    <AnalysisModeSecurity>All</AnalysisModeSecurity>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <!-- BUG on .NET9 Analyzers
+  <ItemGroup Condition="'$(MSBuildProjectExtension)' != '.dcproj' AND !$(MSBuildProjectName.Contains(`AppHost`))">
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="*">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>
+        runtime; build; native; contentfiles; analyzers; buildtransitive
+      </IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  -->
+</Project>

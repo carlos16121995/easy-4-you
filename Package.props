@@ -7,7 +7,7 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/carlos16121995/easy-4-you</RepositoryUrl>
     <NeutralLanguage>pt-BR</NeutralLanguage>
-    <PackageIcon>images/result.png</PackageIcon>
+    <PackageIcon>images/e4u.png</PackageIcon>
     <PackageReadmeFile>docs/README.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>$(Company)</Authors>
